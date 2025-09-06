@@ -1,0 +1,87 @@
+{
+  "name": "@logflux-io/logflux-js-sdk",
+  "version": "0.1.0-beta",
+  "description": "A lightweight JavaScript/TypeScript SDK for communicating with the LogFlux agent",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test": "jest --config jest.config.cjs",
+    "test:watch": "jest --config jest.config.cjs --watch",
+    "test:coverage": "jest --config jest.config.cjs --coverage",
+    "test:integration": "jest --config jest.integration.config.cjs",
+    "test:integration:coverage": "jest --config jest.integration.config.cjs --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "logflux",
+    "logging",
+    "typescript",
+    "javascript",
+    "sdk",
+    "agent",
+    "observability"
+  ],
+  "author": "LogFlux Team",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logflux-io/logflux-js-sdk.git"
+  },
+  "homepage": "https://docs.logflux.io",
+  "bugs": {
+    "url": "https://github.com/logflux-io/logflux-js-sdk/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE-APACHE-2.0"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/bunyan": "^1.8.11",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.1",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "bunyan": "^1.8.15",
+    "eslint": "^9.35.0",
+    "eslint-plugin-security": "^3.0.1",
+    "jest": "^30.1.3",
+    "pino": "^9.9.4",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.10.0",
+    "ts-jest": "^29.1.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "bunyan": ">=1.0.0",
+    "pino": ">=8.0.0",
+    "winston": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "winston": {
+      "optional": true
+    },
+    "bunyan": {
+      "optional": true
+    },
+    "pino": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
